@@ -1,0 +1,10 @@
+{
+    "folders": [
+        {
+            "path": "Api/wares-api"
+        },
+        {
+            "path": "App/wares-app"
+        }
+    ]
+}
