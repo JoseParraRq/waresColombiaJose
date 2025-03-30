@@ -1,0 +1,80 @@
+
+.userListContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 12px;
+}
+
+
+/* Contenedor de la tabla */
+.tableScrollContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+    overflow-x: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+/* Celdas */
+.user-table th,
+.user-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+/* Cabeceras */
+.user-table th {
+    background-color: #f5f5f5;
+    position: sticky;
+    top: 0;
+    font-weight: 500;
+}
+
+/* Trigger para infinite scroll */
+.scroll-trigger {
+    height: 20px;
+    width: 100%;
+}
+
+/* Botón de crear usuario */
+.create-btn {
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+.userTableList{
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+    overflow: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

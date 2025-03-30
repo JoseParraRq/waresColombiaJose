@@ -1,0 +1,5 @@
+
+import envJSON from '../../env.config.json';
+const node_env = process.env.NODE_ENV || 'development';
+const config = envJSON[node_env];
+export const env = config;
