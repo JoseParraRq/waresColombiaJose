@@ -20,6 +20,18 @@ export const createUserValidatorSchema = {
         exists: true,
         errorMessage: "Email es requerido y debe ser valido eje: correo@correo.com",
     },
+    name: {
+        in: ["body"],
+        isString: true,
+        exists: true,
+        errorMessage: "Name es requerido y debe ser una cadena de texto.",
+    },
+    document_number: {
+        in: ["body"],
+        isString: true,
+        exists: true,
+        errorMessage: "Document number es requerido y debe ser una cadena de texto.",
+    },
 };
 
 export const updateUserValidatorSchema = {
@@ -54,6 +66,12 @@ export const updateUserValidatorSchema = {
         isString: true,
         isOptional: true,
         errorMessage: "Name debe ser una cadena de texto.",
+    },
+    document_number: {
+        in: ["body"],
+        isString: true,
+        exists: true,
+        errorMessage: "Document number es requerido y debe ser una cadena de texto.",
     },
 };
 

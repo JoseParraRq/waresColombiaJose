@@ -9,7 +9,8 @@ export const createUserController = [
     body(createUserValidatorSchema.type_document_id.in).isInt().notEmpty().exists().withMessage(createUserValidatorSchema.type_document_id.errorMessage),
     body(createUserValidatorSchema.user_type_id.in).isInt().notEmpty().exists().withMessage(createUserValidatorSchema.user_type_id.errorMessage),
     body(createUserValidatorSchema.email.in).isEmail().exists().withMessage(createUserValidatorSchema.email.errorMessage),
-    // body(createUserValidatorSchema.name.in).optional().isString().withMessage('Name debe ser una cadena de texto.'), // Agregamos validación para name
+    body(createUserValidatorSchema.name.in).isString().exists().withMessage(createUserValidatorSchema.name.errorMessage),
+    body(createUserValidatorSchema.document_number.in).isString().exists().withMessage(createUserValidatorSchema.document_number.errorMessage),
 
     // Controlador
     async (req, res) => {
@@ -71,10 +72,11 @@ export const getUsersWithPagination = [
 export const updateUserController = [
     // Validaciones
     param(updateUserValidatorSchema.id.in).isInt().notEmpty().exists().withMessage(updateUserValidatorSchema.id.errorMessage),
-    body(updateUserValidatorSchema.type_document_id.in).isInt().optional().withMessage(updateUserValidatorSchema.type_document_id.errorMessage),
-    body(updateUserValidatorSchema.user_type_id.in).isInt().optional().withMessage(updateUserValidatorSchema.user_type_id.errorMessage),
-    body(updateUserValidatorSchema.email.in).isEmail().optional().withMessage(updateUserValidatorSchema.email.errorMessage),
-    body(updateUserValidatorSchema.name.in).optional().isString().withMessage('Name debe ser una cadena de texto.'), // Agregamos validación para name
+    body(updateUserValidatorSchema.type_document_id.in).isInt().notEmpty().exists().withMessage(updateUserValidatorSchema.type_document_id.errorMessage),
+    body(updateUserValidatorSchema.user_type_id.in).isInt().notEmpty().exists().withMessage(updateUserValidatorSchema.user_type_id.errorMessage),
+    body(updateUserValidatorSchema.email.in).isEmail().exists().withMessage(updateUserValidatorSchema.email.errorMessage),
+    body(updateUserValidatorSchema.name.in).isString().exists().withMessage(updateUserValidatorSchema.name.errorMessage),
+    body(updateUserValidatorSchema.document_number.in).isString().exists().withMessage(updateUserValidatorSchema.document_number.errorMessage),
 
     // Controlador
     async (req, res) => {
